@@ -5,7 +5,7 @@ import PokemonCard from "../components/PokemonCard";
 
 const styles = (theme) => ({
   pokedexContainer: {
-    height: "100vh",
+    height: "auto",
     backgroundColor: "rgb(68, 68, 68)",
     paddingTop: 80,
     textAlign: "center"

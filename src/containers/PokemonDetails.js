@@ -26,6 +26,9 @@ const styles = (theme) => ({
   textTitle: {
     textTransform: "upperCase",
     fontFamily: "Fantasy",
+    '@media (max-width:599px)': {
+      fontSize: '4rem',
+    },
   },
   pokemonImage: {
     width: "170px",
@@ -33,8 +36,9 @@ const styles = (theme) => ({
   },
   pokemonInfoContainer: {
     bottom: 60,
+    left: 15,
     position: "absolute",
-    width: "100%",
+    width: 'calc(100% - 30px)',
   },
   seperator: {
     height: "0.01mm",
@@ -71,7 +75,7 @@ class PokemonDetails extends Component {
   favouriteChecker(pokemon) {
     let found = false
     this.props.favourites?.map((p) => {
-      if(p.id === pokemon.id) {
+      if (p.id === pokemon.id) {
         found = true
       }
     })
@@ -89,10 +93,10 @@ class PokemonDetails extends Component {
               {name}
             </Typography>
             <img className={classes.pokemonImage} src={sprites.front_default} />
-            <Box className={classes.pokemonInfoContainer}>
+            <div className={classes.pokemonInfoContainer}>
               <hr className={classes.seperator} />
               <Grid container>
-                <Grid item md={1}>
+                <Grid item md={2} sm={6} xs={6}>
                   <Button
                     className={classes.favourite}
                     onClick={() => this.props.toggleFavourite(pokemon)}
@@ -100,21 +104,21 @@ class PokemonDetails extends Component {
                     <FavoriteIcon style={{ color: this.favouriteChecker(pokemon) ? "red" : "white", fontSize: 50 }} />
                   </Button>
                 </Grid>
-                <Grid item md={2}>
+                <Grid item md={3} sm={6} xs={6}>
                   <Typography className={classes.text}>
                     Name
                     <br />
                     {name}
                   </Typography>
                 </Grid>
-                <Grid item md={2}>
+                <Grid item md={2} sm={6} xs={6}>
                   <Typography className={classes.text}>
                     Height
                     <br />
                     {height}m
                   </Typography>
                 </Grid>
-                <Grid item md={2}>
+                <Grid item md={2} sm={6} xs={6}>
                   <Typography className={classes.text}>
                     Weight
                     <br />
@@ -124,7 +128,7 @@ class PokemonDetails extends Component {
                 {types.map((pokemonType) => {
                   const { name } = pokemonType.type;
                   return (
-                    <Grid item md={2}>
+                    <Grid item md={3} sm={6} xs={6}>
                       <Typography className={classes.text}>
                         Type
                         <br />
@@ -134,7 +138,7 @@ class PokemonDetails extends Component {
                   );
                 })}
               </Grid>
-            </Box>
+            </div>
           </Box>
         </Box>
       );
