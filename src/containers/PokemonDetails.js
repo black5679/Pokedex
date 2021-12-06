@@ -33,7 +33,7 @@ const styles = (theme) => ({
     textTransform: "upperCase",
     fontFamily: "Fantasy",
     '@media (max-width:599px)': {
-      fontSize: '3.5rem',
+      fontSize: '3rem',
     },
   },
   pokemonImage: {
