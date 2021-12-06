@@ -22,6 +22,12 @@ const styles = (theme) => ({
     textAlign: "center",
     borderRadius: 5,
     paddingTop: 30,
+    '@media (max-width: 599px)': {
+      height: '580px',
+    },
+    '@media (min-width: 600px) and (max-width: 959px)': {
+      height: '600px',
+    },
   },
   textTitle: {
     textTransform: "upperCase",
