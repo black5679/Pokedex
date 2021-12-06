@@ -15,7 +15,7 @@ import { toggleFavourite } from "../redux/actions";
 
 const styles = (theme) => ({
   pokedexContainer: {
-    height: "84vh",
+    height: "488px",
     backgroundColor: "black",
     color: "white",
     marginTop: 75,
@@ -27,7 +27,7 @@ const styles = (theme) => ({
     textTransform: "upperCase",
     fontFamily: "Fantasy",
     '@media (max-width:599px)': {
-      fontSize: '4rem',
+      fontSize: '3.5rem',
     },
   },
   pokemonImage: {
@@ -35,10 +35,11 @@ const styles = (theme) => ({
     height: "170px",
   },
   pokemonInfoContainer: {
-    bottom: 60,
+    bottom: '60',
     left: 15,
     position: "absolute",
     width: 'calc(100% - 30px)',
+    
   },
   seperator: {
     height: "0.01mm",
@@ -89,14 +90,16 @@ class PokemonDetails extends Component {
       return (
         <Box>
           <Box className={classes.pokedexContainer}>
-            <Typography className={classes.textTitle} variant="h1">
+          <Typography className={classes.textTitle} variant="h1">
               {name}
             </Typography>
             <img className={classes.pokemonImage} src={sprites.front_default} />
             <div className={classes.pokemonInfoContainer}>
+            
+            
               <hr className={classes.seperator} />
               <Grid container>
-                <Grid item md={2} sm={6} xs={6}>
+                <Grid item md={1} sm={6} xs={6}>
                   <Button
                     className={classes.favourite}
                     onClick={() => this.props.toggleFavourite(pokemon)}
@@ -128,7 +131,7 @@ class PokemonDetails extends Component {
                 {types.map((pokemonType) => {
                   const { name } = pokemonType.type;
                   return (
-                    <Grid item md={3} sm={6} xs={6}>
+                    <Grid item md={2} sm={6} xs={6}>
                       <Typography className={classes.text}>
                         Type
                         <br />

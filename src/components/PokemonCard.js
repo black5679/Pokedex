@@ -36,7 +36,7 @@ export default function PokemonCard(props) {
   const { pokemon, image } = props;
   const { id, name } = pokemon;
   return (
-    <Grid item xs={12} sm={2} key={id}>
+    <Grid item xs={12} sm={4} md={2} key={id}>
       <Link to={"/pokemon/" + id} className={classes.link}>
         <Card className={classes.card}>
           <CardMedia className={classes.cardMedia} image={image}></CardMedia>
