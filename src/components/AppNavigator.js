@@ -15,7 +15,8 @@ const useStyles = makeStyles((theme) => ({
   title: {
     cursor: 'pointer',
     color: 'white'
-  }
+  },
+ 
 }));
 
 export default function AppNavigator() {
@@ -53,7 +54,7 @@ export default function AppNavigator() {
           className="me-2"
           aria-label="Search"
         />
-        <Button variant="outline-success">Search</Button>
+        <button className='btn btn-dark'>Search</button>
       </Form>
         </Navbar.Collapse>
       </Container>
